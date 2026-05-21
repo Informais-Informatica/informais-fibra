@@ -76,16 +76,18 @@ export default function About() {
                 Somos a vertente de telecomunicações da Informais, empresa consolidada no mercado de tecnologia. Com DNA de inovação, levamos internet de alta qualidade para residências e empresas.
               </p>
               <p>
-                Nosso <strong className="text-[#1A56DB] font-semibold">link dedicado</strong> garante que supermercados, clínicas, lojas e escritórios nunca fiquem offline — porque cada minuto sem internet é prejuízo para o seu negócio.
+                Nosso <strong className="text-[#1A56DB] font-semibold">link dedicado</strong> garante que supermercados, clínicas, lojas e escritórios mantenham suas operações conectadas e estáveis — porque cada minuto sem internet é prejuízo para o seu negócio.
               </p>
             </div>
 
             <div className="space-y-3">
               {[
-                "Instalação técnica com Wi-Fi 6 incluso grátis",
-                "Fibra óptica real com infraestrutura robusta",
-                "Link dedicado exclusivo para empresas",
-                "Em expansão — novos bairros todo mês",
+                "Instalação técnica especializada com Wi-Fi 6 incluso grátis",
+                "Fibra óptica real com infraestrutura robusta e alta estabilidade",
+                "Link dedicado exclusivo para empresas com IP público fixo",
+                "Firewall corporativo para mais segurança e proteção da rede",
+                "Consultoria técnica para apoiar a conectividade do seu negócio",
+                "Em expansão — levando conexão de qualidade para novos bairros todos os meses",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#EBF5FF] flex items-center justify-center flex-shrink-0">

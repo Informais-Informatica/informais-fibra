@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const services = [
@@ -38,21 +38,11 @@ const services = [
 
 export default function Services() {
   const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll(".srv-card").forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).style.opacity = "1";
-                (el as HTMLElement).style.transform = "translateY(0)";
-              }, i * 80);
-            });
-          }
-        });
-      },
+      (entries) => { if (entries[0].isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -96,9 +86,12 @@ export default function Services() {
         />
 
         <div className="relative max-w-7xl mx-auto px-6 py-20">
+
+          {/* Header — wrapper para entrada */}
           <div
-            className="srv-card text-center max-w-xl mx-auto mb-14"
-            style={{ opacity: 0, transform: "translateY(30px)", transition: "all 0.7s ease" }}
+            className={`text-center max-w-xl mx-auto mb-14 transition-all duration-700 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           >
             <span className="inline-block bg-white/15 text-white font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-white/20">
               // Nossos serviços
@@ -115,26 +108,32 @@ export default function Services() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, index) => (
+              // Wrapper: só cuida da animação de entrada com delay escalonado
               <div
                 key={service.title}
-                className="srv-card group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                style={{ opacity: 0, transform: "translateY(30px)", transition: `all 0.6s ease ${index * 0.08}s` }}
+                className={`transition-all duration-700 h-full ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-3deg]">
-                    <Image
-                      src={service.icon}
-                      alt={service.title}
-                      width={48}
-                      height={48}
-                      className="w-10 h-10 object-contain"
-                    />
+                {/* Card: hover sem delay, altura igual para todos */}
+                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full" style={{ transitionDelay: "0ms" }}>
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:scale-110 group-hover:rotate-[-3deg]">
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={48}
+                        height={48}
+                        className="w-10 h-10 object-contain"
+                      />
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-[#1E293B] uppercase group-hover:text-[#1A56DB] transition-colors duration-200">
+                      {service.title}
+                    </h3>
                   </div>
-                  <h3 className="font-display font-bold text-lg text-[#1E293B] uppercase group-hover:text-[#1A56DB] transition-colors">
-                    {service.title}
-                  </h3>
+                  <p className="font-body text-slate-500 text-sm leading-relaxed">{service.description}</p>
                 </div>
-                <p className="font-body text-slate-500 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
