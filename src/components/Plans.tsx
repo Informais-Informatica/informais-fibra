@@ -94,7 +94,7 @@ export default function Plans() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-6 items-center">
           {plans.map((plan, index) => (
             // Wrapper exclusivo para animação de entrada — o delay fica aqui e não vaza para o hover
             <div
