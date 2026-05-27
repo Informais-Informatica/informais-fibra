@@ -94,7 +94,7 @@ export default function Plans() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-6 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-6 items-center">
           {plans.map((plan, index) => (
             // Wrapper exclusivo para animação de entrada — o delay fica aqui e não vaza para o hover
             <div
@@ -132,7 +132,7 @@ export default function Plans() {
                   </div>
                 )}
 
-                <div className={`p-5 xl:p-6 ${plan.highlight ? "xl:py-10" : "xl:py-8"}`}>
+                <div className={`p-5 xl:p-6 ${plan.highlight ? "xl:py-10" : "xl:py-8"} flex flex-col items-center sm:items-start text-center sm:text-left`}>
                   <h3 className="font-display font-bold text-lg uppercase text-[#1E293B] mb-1">
                     {plan.name}
                   </h3>
@@ -170,7 +170,7 @@ export default function Plans() {
                     </>
                   )}
 
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8 w-full">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3 font-body text-sm text-slate-600">
                         <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
@@ -190,7 +190,7 @@ export default function Plans() {
                   <a
                     href="https://wa.me/5500000000000"
                     target="_blank" rel="noopener noreferrer"
-                    className={`btn-primary block text-center font-body font-semibold py-4 rounded-xl transition-all ${
+                    className={`btn-primary w-full block text-center font-body font-semibold px-6 py-4 rounded-xl transition-all ${
                       plan.highlight
                         ? "bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] shadow-lg shadow-[#FBBF24]/30"
                         : plan.dedicated
