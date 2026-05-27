@@ -5,7 +5,6 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#0F172A] overflow-hidden">
-      {/* Top gradient bar */}
       <div
         className="h-1.5 w-full"
         style={{ background: "linear-gradient(90deg, #1A56DB 0%, #FBBF24 50%, #1A56DB 100%)" }}
@@ -13,7 +12,6 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 py-10">
 
-        {/* Conteúdo — logo à esquerda, texto + link à direita */}
         <div className="flex items-center gap-6 pb-8 border-b border-white/5">
           <Image
             src="/logo.png"
@@ -41,7 +39,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="font-body text-xs text-slate-500">
             © {currentYear} Informais Fibra — Todos os Direitos Reservados.

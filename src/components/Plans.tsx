@@ -60,10 +60,8 @@ export default function Plans() {
 
   return (
     <section id="planos" ref={ref} className="relative overflow-hidden">
-      {/* Top blue separator */}
       <div className="h-1.5 bg-[#1A56DB]" />
 
-      {/* Diagonal stripe background */}
       <div
         className="absolute inset-0"
         style={{
@@ -79,7 +77,6 @@ export default function Plans() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 py-24">
-        {/* Header */}
         <div className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block bg-[#EBF5FF] text-[#1A56DB] border border-[#1A56DB]/15 font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             // Planos
@@ -93,10 +90,8 @@ export default function Plans() {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-6 items-center">
           {plans.map((plan, index) => (
-            // Wrapper exclusivo para animação de entrada — o delay fica aqui e não vaza para o hover
             <div
               key={plan.id}
               className={`transition-all duration-700 ${
@@ -104,7 +99,6 @@ export default function Plans() {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Card sem delay — hover responde imediatamente */}
               <div
                 className={`plan-card relative rounded-2xl overflow-hidden bg-white transition-[box-shadow,transform] duration-200 ${
                   plan.highlight
@@ -188,7 +182,7 @@ export default function Plans() {
                   </ul>
 
                   <a
-                    href="https://wa.me/5500000000000"
+                    href="https://wa.me/5564996768038"
                     target="_blank" rel="noopener noreferrer"
                     className={`btn-primary w-full block text-center font-body font-semibold px-6 py-4 rounded-xl transition-all ${
                       plan.highlight

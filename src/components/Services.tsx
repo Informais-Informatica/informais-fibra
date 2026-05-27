@@ -52,7 +52,6 @@ export default function Services() {
   return (
     <section id="servicos" ref={ref} className="relative overflow-hidden">
 
-      {/* Banner with supermarket image */}
       <div className="relative h-75 overflow-hidden">
         <Image
           src="/cashier.png"
@@ -72,7 +71,6 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Cards on blue with grid pattern */}
       <div className="relative bg-[#1A56DB] overflow-hidden">
         <div
           className="absolute inset-0"
@@ -87,7 +85,6 @@ export default function Services() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-20">
 
-          {/* Header — wrapper para entrada */}
           <div
             className={`text-center max-w-xl mx-auto mb-14 transition-all duration-700 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -108,7 +105,6 @@ export default function Services() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, index) => (
-              // Wrapper: só cuida da animação de entrada com delay escalonado
               <div
                 key={service.title}
                 className={`transition-all duration-700 h-full ${
@@ -116,7 +112,6 @@ export default function Services() {
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
-                {/* Card: hover sem delay, altura igual para todos */}
                 <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full" style={{ transitionDelay: "0ms" }}>
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:scale-110 group-hover:rotate-[-3deg]">

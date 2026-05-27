@@ -62,7 +62,6 @@ export default function Contact() {
     <section id="contato" ref={ref} className="relative bg-[#1A56DB] overflow-hidden">
       <div className="h-1.5 bg-[#FBBF24]" />
 
-      {/* Grid pattern — matches Services */}
       <div
         className="absolute inset-0"
         style={{
@@ -77,7 +76,6 @@ export default function Contact() {
       <div className="relative max-w-6xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left: heading */}
           <div className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <span className="inline-block bg-white/15 text-white border border-white/20 font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6">
               // Entre em contato
@@ -91,7 +89,6 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Right: contact rows */}
           <div className={`flex flex-col gap-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             {contacts.map((item) => (
               <a

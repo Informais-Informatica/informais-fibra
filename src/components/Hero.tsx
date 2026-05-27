@@ -109,13 +109,11 @@ export default function Hero() {
     goTo((current + 1) % slides.length);
   }, [current, goTo]);
 
-  // Auto-advance
   useEffect(() => {
     timerRef.current = setTimeout(next, SLIDE_DURATION);
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [current, next]);
 
-  // Entrance animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => { if (entries[0].isIntersecting) setEntered(true); },
@@ -130,7 +128,6 @@ export default function Hero() {
   return (
     <section id="inicio" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Background images — crossfade */}
       {slides.map((s, i) => (
         <div
           key={s.id}
@@ -149,14 +146,11 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Yellow top accent */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#FBBF24] z-10" />
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 pt-24 pb-28">
         <div className="max-w-2xl space-y-8">
 
-          {/* Badge */}
           <div className={`transition-all duration-700 delay-[0ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <span
               key={slide.id + "-badge"}
@@ -167,7 +161,6 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Title */}
           <div className={`transition-all duration-700 delay-[150ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <h1
               className={`font-display font-black text-5xl md:text-6xl xl:text-[5.5rem] leading-[0.9] uppercase tracking-tight text-white transition-opacity duration-400 ${animating ? "opacity-0" : "opacity-100"}`}
@@ -176,12 +169,10 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Description */}
           <p className={`font-body text-lg text-slate-300 leading-relaxed max-w-lg transition-all duration-700 delay-[300ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-opacity duration-400 ${animating ? "opacity-0" : "opacity-100"}`}>
             {slide.description}
           </p>
 
-          {/* CTAs */}
           <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-[450ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <a href="#planos" className="btn-primary bg-[#1A56DB] hover:bg-[#1E429F] text-white font-body font-semibold px-8 py-4 rounded-xl transition-all text-base">
               Ver Planos
@@ -191,7 +182,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Stats */}
           <div className={`flex flex-wrap gap-3 pt-2 transition-all duration-700 delay-[600ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             {slide.stats.map((stat) => (
               <div
@@ -206,7 +196,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Dot navigation */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
         {slides.map((s, i) => (
           <button

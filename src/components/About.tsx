@@ -31,7 +31,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left: Heading + stats */}
           <div
             className="reveal"
             style={{ opacity: 0, transform: "translateY(2rem)", transition: "all 0.7s ease" }}
@@ -66,7 +65,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: Text + feature list */}
           <div
             className="reveal space-y-7"
             style={{ opacity: 0, transform: "translateY(2rem)", transition: "all 0.7s ease 150ms" }}

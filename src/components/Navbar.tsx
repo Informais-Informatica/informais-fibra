@@ -32,7 +32,6 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo — image */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
@@ -44,7 +43,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((item) => (
             <Link
@@ -57,10 +55,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Spacer to keep logo left-aligned on desktop */}
         <div className="hidden md:block w-32" />
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
@@ -74,7 +70,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-96" : "max-h-0"}`}>
         <div className="bg-[#0D1B3E] border-t border-white/10 px-6 py-5 flex flex-col gap-3">
           {navLinks.map((item) => (
