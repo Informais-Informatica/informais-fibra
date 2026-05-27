@@ -18,9 +18,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Informais Telecom | Internet de Alta Performance",
+  title: "Informais Fibra | Internet de Alta Performance",
   description:
-    "Conecte-se com a melhor internet da região. Informais Telecom oferece fibra óptica, velocidade e estabilidade para a sua casa ou empresa.",
+    "Conecte-se com a melhor internet da região. Informais Fibra oferece fibra óptica, velocidade e estabilidade para a sua casa ou empresa.",
   keywords: "internet fibra óptica, provedor internet, telecom, alta velocidade",
 };
 
