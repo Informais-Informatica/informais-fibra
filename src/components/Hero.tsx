@@ -8,6 +8,7 @@ const slides = [
     id: "empresa",
     image: "/working.png",
     badge: "Fibra Óptica · Link Dedicado",
+    alt: "Internet empresarial com link dedicado para empresas em Jataí, GO",
     title: (
       <>
         Sua
@@ -35,6 +36,7 @@ const slides = [
     id: "familia",
     image: "/watching.jpg",
     badge: "Fibra Óptica · Para sua casa",
+    alt: "Internet residencial fibra óptica para streaming e Wi-Fi 6 em Jataí, GO",
     title: (
       <>
         Entretenimento
@@ -62,6 +64,7 @@ const slides = [
     id: "games",
     image: "/game.jpg",
     badge: "Fibra Óptica · Para Gamers",
+    alt: "Internet fibra óptica de baixa latência para jogos online em Jataí, GO",
     title: (
       <>
         Conexão
@@ -136,7 +139,7 @@ export default function Hero() {
         >
           <Image
             src={s.image}
-            alt={s.badge}
+            alt={s.alt}
             fill
             className="object-cover object-center"
             priority={i === 0}
@@ -174,10 +177,10 @@ export default function Hero() {
           </p>
 
           <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-[450ms] ${entered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <a href="#planos" className="btn-primary bg-[#1A56DB] hover:bg-[#1E429F] text-white font-body font-semibold px-8 py-4 rounded-xl transition-all text-base">
+            <a href="/planos" className="btn-primary bg-[#1A56DB] hover:bg-[#1E429F] text-white font-body font-semibold px-8 py-4 rounded-xl transition-all text-base">
               Ver Planos
             </a>
-            <a href="#contato" className="btn-primary bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] font-body font-semibold px-8 py-4 rounded-xl transition-all text-base">
+            <a href="/contato" className="btn-primary bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] font-body font-semibold px-8 py-4 rounded-xl transition-all text-base">
               Falar conosco
             </a>
           </div>

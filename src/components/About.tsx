@@ -71,7 +71,7 @@ export default function About() {
           >
             <div className="space-y-4 font-body text-slate-500 leading-relaxed">
               <p>
-                Somos a vertente de telecomunicações da Informais, empresa consolidada no mercado de tecnologia. Com DNA de inovação, levamos internet de alta qualidade para residências e empresas.
+                Somos a vertente de telecomunicações da Informais, empresa consolidada no mercado de tecnologia. Com DNA de inovação, levamos internet fibra óptica de alta qualidade para residências e empresas de Jataí (GO) e região.
               </p>
               <p>
                 Nosso <strong className="text-[#1A56DB] font-semibold">link dedicado</strong> garante que supermercados, clínicas, lojas e escritórios mantenham suas operações conectadas e estáveis — porque cada minuto sem internet é prejuízo para o seu negócio.

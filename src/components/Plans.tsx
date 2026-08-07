@@ -45,7 +45,8 @@ const plans = [
   },
 ];
 
-export default function Plans() {
+export default function Plans({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -59,74 +60,47 @@ export default function Plans() {
   }, []);
 
   return (
-    <section id="planos" ref={ref} className="relative overflow-hidden">
-      <div className="h-1.5 bg-[#1A56DB]" />
-
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundColor: "#ffffff",
-          backgroundImage: `repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 20px,
-            rgba(26, 86, 219, 0.2) 20px,
-            rgba(26, 86, 219, 0.2) 24px
-          )`,
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 py-24">
+    <section id="planos" ref={ref} className="relative">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block bg-[#EBF5FF] text-[#1A56DB] border border-[#1A56DB]/15 font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             // Planos
           </span>
-          <h2 className="font-display font-black text-5xl md:text-6xl uppercase leading-[0.9] text-[#1E293B] mb-4">
+          <Heading className="font-display font-black text-5xl md:text-6xl uppercase leading-[0.9] text-[#1E293B] mb-4">
             Escolha o plano{" "}
             <span className="text-[#1A56DB]">ideal</span>
-          </h2>
+          </Heading>
           <p className="font-body text-slate-500 text-lg leading-relaxed">
-            Fibra óptica real, Wi-Fi 6 grátis e suporte 24/7 em todos os planos.
+            Fibra óptica real, Wi-Fi 6 grátis e suporte 24/7 para residências e empresas em Jataí (GO).
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-6 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan, index) => (
             <div
               key={plan.id}
-              className={`transition-all duration-700 ${
+              className={`h-full transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div
-                className={`plan-card relative rounded-2xl overflow-hidden bg-white transition-[box-shadow,transform] duration-200 ${
-                  plan.highlight
-                    ? "shadow-2xl shadow-[#1A56DB]/20 scale-105"
-                    : plan.dedicated
-                    ? "shadow-lg shadow-[#0D1B3E]/15"
-                    : "shadow-lg shadow-[#1A56DB]/10"
+                className={`card-surface relative h-full flex flex-col rounded-2xl bg-white ${
+                  plan.highlight ? "ring-2 ring-[#1A56DB]/25" : ""
                 }`}
               >
-                <div className={`w-full ${plan.dedicated ? "bg-[#0D1B3E]" : "bg-[#1A56DB]"} ${plan.highlight ? "h-1.5" : "h-px"}`} />
-
                 {plan.highlight && (
-                  <div className="bg-[#FBBF24] text-center py-2">
-                    <span className="font-display font-bold text-xs uppercase tracking-widest text-[#1E293B]">
-                      ⚡ Mais popular
-                    </span>
-                  </div>
+                  <span className="absolute -top-3 right-6 bg-[#FBBF24] text-[#1E293B] font-display font-bold text-[11px] uppercase tracking-wide px-3 py-1 rounded-full shadow-md shadow-[#FBBF24]/40">
+                    ⚡ Mais popular
+                  </span>
                 )}
-
                 {plan.dedicated && (
-                  <div className="bg-[#0D1B3E] text-center py-2">
-                    <span className="font-display font-bold text-xs uppercase tracking-widest text-white/80">
-                      🏢 Corporativo
-                    </span>
-                  </div>
+                  <span className="absolute -top-3 right-6 bg-[#0D1B3E] text-white font-display font-bold text-[11px] uppercase tracking-wide px-3 py-1 rounded-full shadow-md shadow-[#0D1B3E]/30">
+                    🏢 Corporativo
+                  </span>
                 )}
 
-                <div className={`p-5 xl:p-6 ${plan.highlight ? "xl:py-10" : "xl:py-8"} flex flex-col items-center sm:items-start text-center sm:text-left`}>
+                <div className="p-6 xl:p-8 flex flex-col h-full items-center sm:items-start text-center sm:text-left">
                   <h3 className="font-display font-bold text-lg uppercase text-[#1E293B] mb-1">
                     {plan.name}
                   </h3>
@@ -134,37 +108,36 @@ export default function Plans() {
                     {plan.description}
                   </p>
 
-                  {plan.dedicated ? (
-                    <div className="mb-8 pb-8 border-b border-slate-100">
-                      <div className="flex flex-col items-start gap-1 mb-3">
-                        <span className="font-display font-black text-3xl leading-none text-[#0D1B3E]">
+                  <div className="w-full min-h-[128px] flex flex-col justify-center mb-8 pb-8 border-b border-slate-100">
+                    {plan.dedicated ? (
+                      <>
+                        <span className="font-display font-black text-3xl leading-none text-[#0D1B3E] mb-2">
                           Sob consulta
                         </span>
-                      </div>
-                      <p className="font-body text-sm text-slate-400">
-                        Velocidade e preço personalizados conforme a sua necessidade.
-                      </p>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="mb-1">
-                        <span className={`font-display font-black text-7xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
-                          {plan.speed}
-                        </span>
-                        <span className="font-display font-bold text-2xl ml-2 text-[#FBBF24]">
-                          Mega
-                        </span>
-                      </div>
+                        <p className="font-body text-sm text-slate-400">
+                          Velocidade e preço personalizados conforme a sua necessidade.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <div className="mb-1">
+                          <span className={`font-display font-black text-6xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
+                            {plan.speed}
+                          </span>
+                          <span className="font-display font-bold text-xl ml-2 text-[#FBBF24]">
+                            Mega
+                          </span>
+                        </div>
+                        <div>
+                          <span className="font-body text-sm text-slate-400">por </span>
+                          <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},90</span>
+                          <span className="font-body text-sm text-slate-400">/mês</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
 
-                      <div className="mb-8 pb-8 border-b border-slate-100">
-                        <span className="font-body text-sm text-slate-400">por </span>
-                        <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},90</span>
-                        <span className="font-body text-sm text-slate-400">/mês</span>
-                      </div>
-                    </>
-                  )}
-
-                  <ul className="space-y-3 mb-8 w-full">
+                  <ul className="space-y-3 mb-8 w-full flex-grow">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3 font-body text-sm text-slate-600">
                         <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
@@ -184,7 +157,7 @@ export default function Plans() {
                   <a
                     href="https://wa.me/5564996768038"
                     target="_blank" rel="noopener noreferrer"
-                    className={`btn-primary w-full block text-center font-body font-semibold px-6 py-4 rounded-xl transition-all ${
+                    className={`btn-primary mt-auto w-full block text-center font-body font-semibold px-6 py-4 rounded-xl transition-all ${
                       plan.highlight
                         ? "bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] shadow-lg shadow-[#FBBF24]/30"
                         : plan.dedicated

@@ -90,3 +90,29 @@ body {
 .icon-3d:hover {
   transform: translateY(-4px) rotate(-2deg);
 }
+
+/* ============================================================
+   Sistema de design das páginas internas (Planos, FAQ, Contato)
+   Fundo único, sutil, azulado — substitui os fundos divergentes
+   (listras, azul sólido, grid forte) que cada página tinha antes.
+   ============================================================ */
+.bg-page-internal {
+  background-color: #F6F9FF;
+  background-image:
+    linear-gradient(rgba(26, 86, 219, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 86, 219, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.card-surface {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -14px rgba(15, 23, 42, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.card-surface:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05), 0 16px 32px -10px rgba(26, 86, 219, 0.18);
+}
+

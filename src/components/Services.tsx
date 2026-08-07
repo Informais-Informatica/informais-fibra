@@ -112,12 +112,13 @@ export default function Services() {
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full" style={{ transitionDelay: "0ms" }}>
+                <article className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full" style={{ transitionDelay: "0ms" }}>
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:scale-110 group-hover:rotate-[-3deg]">
                       <Image
                         src={service.icon}
-                        alt={service.title}
+                        alt=""
+                        aria-hidden="true"
                         width={48}
                         height={48}
                         className="w-10 h-10 object-contain"
@@ -128,7 +129,7 @@ export default function Services() {
                     </h3>
                   </div>
                   <p className="font-body text-slate-500 text-sm leading-relaxed">{service.description}</p>
-                </div>
+                </article>
               </div>
             ))}
           </div>
