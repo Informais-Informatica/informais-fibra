@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: siteConfig.themeColor,
+  themeColor: "#0F172A", // mesma cor do Footer (bg-[#0F172A]), para a barra do navegador/status bar do iOS ficar consistente
 };
 
 export const metadata: Metadata = {
