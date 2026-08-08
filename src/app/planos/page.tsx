@@ -64,8 +64,6 @@ export default function PlanosPage() {
 
         <Plans headingLevel="h1" />
 
-        {/* Separação evidente entre os cards e o FAQ, como pedido: um bloco
-            branco próprio com sombra, em vez do FAQ flutuar solto no mesmo fundo. */}
         <section aria-labelledby="planos-faq-heading" className="max-w-3xl mx-auto px-6 pb-8">
           <div className="card-surface rounded-2xl px-6 py-10 sm:px-10 sm:py-12">
             <span className="inline-block bg-[#EBF5FF] text-[#1A56DB] border border-[#1A56DB]/15 font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-5">

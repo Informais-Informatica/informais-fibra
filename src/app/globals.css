@@ -97,11 +97,6 @@ body {
   transform: translateY(-4px) rotate(-2deg);
 }
 
-/* ============================================================
-   Sistema de design das páginas internas (Planos, FAQ, Contato)
-   Fundo único, sutil, azulado — substitui os fundos divergentes
-   (listras, azul sólido, grid forte) que cada página tinha antes.
-   ============================================================ */
 .bg-page-internal {
   background-color: #F6F9FF;
   background-image:

@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0F172A", // mesma cor do Footer (bg-[#0F172A]), para a barra do navegador/status bar do iOS ficar consistente
+  themeColor: "#0F172A",
 };
 
 export const metadata: Metadata = {
@@ -87,8 +87,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
-  // TODO: adicionar após criar as propriedades no Google Search Console / Bing Webmaster Tools
-  // verification: { google: "SEU_CODIGO_AQUI" },
 };
 
 export default function RootLayout({

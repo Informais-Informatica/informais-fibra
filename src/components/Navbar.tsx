@@ -18,14 +18,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // A navbar só faz sentido transparente-no-topo na Home, porque é a única
-  // página com uma imagem de fundo full-bleed atrás dela (o Hero). Nas
-  // páginas internas (fundo branco/azul sólido) ela fica sempre sólida.
   const solid = scrolled || !isHome;
 
-  // Sobre e Serviços continuam como seções da Home (âncoras).
-  // Planos, Contato e FAQ são páginas próprias, com URL, título e
-  // meta description dedicados — ver README para o racional de SEO.
   const navLinks = [
     { label: "Início", href: "/" },
     { label: "Sobre", href: "/#sobre" },

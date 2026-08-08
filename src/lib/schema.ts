@@ -1,12 +1,5 @@
 import { siteConfig } from "./site-config";
 
-/**
- * Schema.org não possui um tipo dedicado "InternetServiceProvider".
- * A prática recomendada para provedores de internet locais é usar
- * "LocalBusiness", com "additionalType" apontando para a entidade
- * correspondente no Wikidata (Q10689397 = Internet service provider),
- * o que ajuda o Google a desambiguar o tipo de negócio.
- */
 export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",

@@ -1,22 +1,12 @@
-/**
- * Configuração central do site.
- *
- * IMPORTANTE: `url` é uma suposição baseada no domínio do e-mail de contato
- * (atendimento@informaisfibra.com.br). Confirme e ajuste para o domínio real
- * antes de publicar — isso afeta metadataBase, sitemap, robots e JSON-LD.
- *
- * `streetAddress` e `openingHours` não foram informados nos arquivos originais,
- * então foram deixados em branco/omitidos (ver README, seção "Dependências externas").
- * Preencha apenas com dados reais — nunca invente esses campos.
- */
+
 export const siteConfig = {
   name: "Informais Fibra",
   legalName: "Informais Telecom",
   shortName: "Informais Fibra",
   description:
     "Provedor de internet fibra óptica em Jataí (GO). Planos de internet residencial e empresarial, link dedicado, Wi-Fi 6 grátis e suporte técnico 24/7.",
-  url: "https://www.informaisfibra.com.br", // TODO: confirmar domínio real
-  ogImage: "/og-image.jpg", // TODO: adicionar imagem 1200x630 em /public
+  url: "https://www.informaisfibra.com.br",
+  ogImage: "/og-image.jpg",
   logo: "/logo.png",
   locale: "pt_BR",
   themeColor: "#1A56DB",
@@ -30,7 +20,6 @@ export const siteConfig = {
   },
 
   address: {
-    // streetAddress e postalCode não informados — preencher com dado real, se houver.
     addressLocality: "Jataí",
     addressRegion: "GO",
     addressCountry: "BR",
