@@ -4,6 +4,16 @@ import { useEffect, useRef, useState } from "react";
 
 const plans = [
   {
+    id: "essencial",
+    name: "Plano Essencial",
+    speed: "300",
+    price: "89",
+    description: "Ideal para o dia a dia: navegação, redes sociais e streaming.",
+    features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online"],
+    highlight: false,
+    dedicated: false,
+  },
+  {
     id: "inicial",
     name: "Plano Residencial",
     speed: "500",
@@ -75,11 +85,11 @@ export default function Plans({ headingLevel = "h2" }: { headingLevel?: "h1" | "
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        <div className="flex flex-wrap justify-center gap-6">
           {plans.map((plan, index) => (
             <div
               key={plan.id}
-              className={`h-full transition-all duration-700 ${
+              className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -121,10 +131,10 @@ export default function Plans({ headingLevel = "h2" }: { headingLevel?: "h1" | "
                     ) : (
                       <>
                         <div className="mb-1">
-                          <span className={`font-display font-black text-6xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
+                          <span className={`font-display font-black text-5xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
                             {plan.speed}
                           </span>
-                          <span className="font-display font-bold text-xl ml-2 text-[#FBBF24]">
+                          <span className="font-display font-bold text-lg ml-2 text-[#FBBF24]">
                             Mega
                           </span>
                         </div>
